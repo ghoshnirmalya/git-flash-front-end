@@ -1,6 +1,6 @@
 {
   "name": "@apps/dashboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Next.js dashboard for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
   "license": "MIT",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.3",
-    "@components/navbar": "^0.1.0",
+    "@components/navbar": "^0.1.1",
     "next": "9.3.2",
     "react": "16.13.0",
     "react-dom": "16.13.0"

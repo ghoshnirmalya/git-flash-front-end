@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.1 (2020-09-06)
+
+**Note:** Version bump only for package @apps/dashboard
+
 # [0.1.0](https://github.com/ghoshnirmalya/git-flash-front-end/compare/@front-end/dashboard@0.0.1...@front-end/dashboard@0.1.0) (2020-09-06)
 
 ### Features

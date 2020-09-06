@@ -1,6 +1,6 @@
 {
   "name": "@components/navbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Navbar component for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
   "license": "MIT",
