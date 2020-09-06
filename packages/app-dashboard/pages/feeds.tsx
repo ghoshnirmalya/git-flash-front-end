@@ -1,4 +1,4 @@
-import Navbar from "@ui/navbar";
+import { Navbar } from "@components/navbar";
 
 const Feeds = () => {
   return (

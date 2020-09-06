@@ -9,16 +9,10 @@ import { NextComponentType } from "next";
 import Link from "next/link";
 import React from "react";
 
-const Navbar: NextComponentType = () => {
+export const Navbar: NextComponentType = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = { light: "white", dark: "gray.800" };
   const color = { light: "gray.800", dark: "gray.100" };
-
-  const handleToggleTheme = () => {
-    console.log("hello");
-
-    toggleColorMode();
-  };
 
   const linksForAllUsers = [
     {
@@ -118,5 +112,3 @@ const Navbar: NextComponentType = () => {
     </Box>
   );
 };
-
-export default Navbar;
