@@ -1,12 +1,12 @@
 import Navbar from "@ui/navbar";
 
-const Index = () => {
+const Feeds = () => {
   return (
     <>
       <Navbar />
-      Index
+      Feeds
     </>
   );
 };
 
-export default Index;
+export default Feeds;

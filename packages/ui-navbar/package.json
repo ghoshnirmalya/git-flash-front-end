@@ -1,5 +1,5 @@
 {
-  "name": "@ui/button",
+  "name": "@ui/navbar",
   "version": "0.0.1",
   "description": "Button component for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
@@ -9,9 +9,11 @@
     "dev": "microbundle watch --jsx React.createElement -f cjs,es",
     "prepare": "microbundle --jsx React.createElement cjs,es"
   },
-  "dependencies": {
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27"
+  "peerDependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.3",
+    "next": "9.3.2",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
   },
   "source": "src/index.tsx",
   "main": "dist/index.js",
