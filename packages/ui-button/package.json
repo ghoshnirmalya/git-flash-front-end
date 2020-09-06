@@ -1,0 +1,20 @@
+{
+  "name": "@ui/button",
+  "version": "0.0.1",
+  "description": "Button component for GitFlash",
+  "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "microbundle watch --jsx React.createElement -f cjs,es",
+    "prepare": "microbundle --jsx React.createElement cjs,es"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27"
+  },
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts"
+}
