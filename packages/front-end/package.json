@@ -1,6 +1,6 @@
 {
   "name": "@front-end/dashboard",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Next.js dashboard for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
   "license": "MIT",
