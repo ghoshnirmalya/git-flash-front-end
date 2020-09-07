@@ -13,21 +13,22 @@ model User {
 }
 
 model Site {
-  id    String    @default(uuid()) @id
-  name String
+  id    String @default(uuid()) @id
+  name  String
   pages Page[]
 }
 
 model Page {
-  id    String    @default(uuid()) @id
-  url String
-  site    Site     @relation(fields: [siteId], references: [id])
-  siteId String
+  id         String       @default(uuid()) @id
+  url        String
+  siteId     String
+  site       Site         @relation(fields: [siteId], references: [id])
+  Screenshot Screenshot[]
 }
 
 model Screenshot {
- id    String    @default(uuid()) @id
- image String
- page    Page     @relation(fields: [pageId], references: [id])
- pageId String
+  id     String @default(uuid()) @id
+  image  String
+  pageId String
+  page   Page   @relation(fields: [pageId], references: [id])
 }

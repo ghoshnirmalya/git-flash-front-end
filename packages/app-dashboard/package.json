@@ -14,7 +14,8 @@
     "prisma:introspect": "prisma introspect",
     "prisma:generate": "prisma generate",
     "prisma:save": "prisma migrate save --experimental",
-    "prisma:up": "prisma migrate up --experimental"
+    "prisma:up": "prisma migrate up --experimental",
+    "postinstall": "yarn prisma:generate"
   },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.3",
