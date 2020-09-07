@@ -1,0 +1,20 @@
+0 silly argv {
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'lerna'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/ghoshnirmalya/Development/personal/products/git-flash/front-end
+3 info versioning independent
+4 verbose session d18283492e018da6
+5 verbose user-agent lerna/3.22.1/node@v12.18.1+x64 (darwin)
+6 error Error: Failed to replace env in config: ${version}
+6 error     at /Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/npm-conf/lib/env-replace.js:23:13
+6 error     at String.replace (<anonymous>)
+6 error     at envReplace (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/npm-conf/lib/env-replace.js:14:14)
+6 error     at parseField (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/npm-conf/lib/parse-field.js:55:11)
+6 error     at Conf.add (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/npm-conf/lib/conf.js:26:26)
+6 error     at npmConf (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/npm-conf/lib/npm-conf.js:29:8)
+6 error     at createRunner (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/run-lifecycle/run-lifecycle.js:126:15)
+6 error     at PublishCommand.initialize (/Users/ghoshnirmalya/Development/personal/products/git-flash/front-end/node_modules/@lerna/publish/index.js:154:32)

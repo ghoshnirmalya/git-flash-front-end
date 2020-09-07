@@ -7,7 +7,7 @@
       "conventionalCommits": true
     },
     "version": {
-      "message": "chore: release v${version}"
+      "message": "chore: release"
     }
   }
 }

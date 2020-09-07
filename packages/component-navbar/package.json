@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "microbundle watch --jsx React.createElement -f cjs,es",
-    "prepare": "microbundle --jsx React.createElement cjs,es"
+    "dev": "microbundle watch --jsx React.createElement --format cjs,es --no-compress",
+    "prepare": "microbundle --jsx React.createElement --format cjs,es --no-compress"
   },
   "peerDependencies": {
     "@chakra-ui/core": "^1.0.0-rc.3",

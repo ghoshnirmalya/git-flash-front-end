@@ -1,19 +1,9 @@
-import {
-  Box,
-  Button,
-  Link as _Link,
-  Stack,
-  useColorMode,
-} from "@chakra-ui/core";
+import { Box, Button, Link as _Link, Stack } from "@chakra-ui/core";
 import { NextComponentType } from "next";
 import Link from "next/link";
 import React from "react";
 
 export const Navbar: NextComponentType = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = { light: "white", dark: "gray.800" };
-  const color = { light: "gray.800", dark: "gray.100" };
-
   const linksForAllUsers = [
     {
       id: "home",
@@ -24,9 +14,9 @@ export const Navbar: NextComponentType = () => {
 
   const linksForAuthenticatedUsers = [
     {
-      id: "feeds",
-      label: "Feeds",
-      href: "/feeds",
+      id: "sites",
+      label: "Sites",
+      href: "/sites",
     },
     {
       id: "myAccount",
@@ -68,9 +58,9 @@ export const Navbar: NextComponentType = () => {
   };
 
   return (
-    <Box bg={bgColor[colorMode]}>
-      <Box p={4} color={color[colorMode]} shadow="lg" pos="relative">
-        <Box maxW="xl" mx="auto" w="full">
+    <Box bg="white">
+      <Box p={4} shadow="lg" pos="relative">
+        <Box maxW="6xl" mx="auto" w="full">
           <Stack
             isInline
             spacing={4}
