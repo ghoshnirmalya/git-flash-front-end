@@ -1,6 +1,6 @@
 {
   "name": "@apps/screenshot",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Screenshot app for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
   "license": "MIT",
