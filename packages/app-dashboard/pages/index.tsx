@@ -75,7 +75,7 @@ const IndexPage: NextPage<IProps> = ({ screenshots }) => {
 export async function getStaticProps() {
   const prisma = new PrismaClient();
 
-  const screenshots = await prisma.screenshot.findMany({ take: 2 });
+  const screenshots = await prisma.screenshot.findMany();
 
   return {
     props: {
