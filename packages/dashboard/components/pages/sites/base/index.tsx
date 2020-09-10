@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
   useDisclosure,
+  Divider,
 } from "@chakra-ui/core";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -30,16 +31,19 @@ const Page: FC<IProps> = ({ sites }) => {
   const sitesNode = () => {
     return sites.map((site) => {
       return (
-        <Link key={site.id} href="/sites/[siteId]" as={`/sites/${site.id}`}>
-          <_Link>
-            <Stack spacing={8} isInline>
-              <Stack spacing={2}>
-                <Heading size="sm">{site.name}</Heading>
-                <Text fontSize="sm">{site.id}</Text>
+        <>
+          <Link key={site.id} href="/sites/[siteId]" as={`/sites/${site.id}`}>
+            <_Link>
+              <Stack spacing={8} isInline>
+                <Stack spacing={2}>
+                  <Heading size="md">{site.name}</Heading>
+                  <Text fontSize="sm">{site.id}</Text>
+                </Stack>
               </Stack>
-            </Stack>
-          </_Link>
-        </Link>
+            </_Link>
+          </Link>
+          <Divider />
+        </>
       );
     });
   };
@@ -54,11 +58,13 @@ const Page: FC<IProps> = ({ sites }) => {
 
   return (
     <>
-      <Stack spacing={8}>
-        <Flex justifyContent="space-between">
-          <Heading>All Sites</Heading>
+      <Stack spacing={12}>
+        <Flex justifyContent="space-between" alignItems="center">
+          <Heading size="2xl">All Sites</Heading>
           <Box>
-            <Button onClick={onOpen}>Add new site</Button>
+            <Button onClick={onOpen} colorScheme="blue">
+              Add new site
+            </Button>
           </Box>
         </Flex>
         <Grid templateColumns="repeat(1, 1fr)" gap={4}>

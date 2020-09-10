@@ -1,7 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/core";
 import type { AppProps } from "next/app";
 import React from "react";
-import Layout from "components/layouts";
+import dynamic from "next/dynamic";
+
+const Layout = dynamic(
+  import(/* webpackChunkName: "Layout" */ "components/layouts")
+);
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
