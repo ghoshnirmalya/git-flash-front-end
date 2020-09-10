@@ -1,5 +1,5 @@
 {
-  "name": "@apps/screenshot",
+  "name": "@git-flash/screenshot",
   "version": "0.1.0",
   "description": "Screenshot app for GitFlash",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",

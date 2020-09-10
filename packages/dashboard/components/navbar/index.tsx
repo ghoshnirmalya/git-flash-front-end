@@ -58,9 +58,9 @@ export const Navbar: NextComponentType = () => {
   };
 
   return (
-    <Box bg="white">
-      <Box p={4} shadow="lg" pos="relative">
-        <Box maxW="6xl" mx="auto" w="full">
+    <Box>
+      <Box p={4} borderBottomWidth={1}>
+        <Box maxW="4xl" mx="auto" w="full">
           <Stack
             isInline
             spacing={4}

@@ -14,6 +14,10 @@ interface IProps {
 }
 
 const IndexPage: NextPage<IProps> = ({ screenshots }) => {
+  if (!screenshots.length) {
+    return <>Hello world</>;
+  }
+
   const [diffImage, setDiffImage] = useState("");
 
   useEffect(() => {

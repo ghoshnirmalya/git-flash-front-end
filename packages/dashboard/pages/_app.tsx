@@ -1,15 +1,14 @@
-import { Box, ChakraProvider } from "@chakra-ui/core";
+import { ChakraProvider } from "@chakra-ui/core";
 import type { AppProps } from "next/app";
 import React from "react";
-import { Navbar } from "@components/navbar";
+import Layout from "components/layouts";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS>
-      <Box bg="gray.100" minH="100vh">
-        <Navbar />
+      <Layout>
         <Component {...pageProps} />
-      </Box>
+      </Layout>
     </ChakraProvider>
   );
 };
