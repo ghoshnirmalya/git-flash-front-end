@@ -31,19 +31,23 @@ const Page: FC<IProps> = ({ sites }) => {
   const sitesNode = () => {
     return sites.map((site) => {
       return (
-        <>
-          <Link key={site.id} href="/sites/[siteId]" as={`/sites/${site.id}`}>
-            <_Link>
-              <Stack spacing={8} isInline>
-                <Stack spacing={2}>
-                  <Heading size="md">{site.name}</Heading>
-                  <Text fontSize="sm">{site.id}</Text>
-                </Stack>
+        <Link key={site.id} href="/sites/[siteId]" as={`/sites/${site.id}`}>
+          <Box
+            as="a"
+            role="button"
+            bg="white"
+            p={4}
+            rounded="md"
+            borderWidth={1}
+          >
+            <Stack spacing={8} isInline>
+              <Stack spacing={2}>
+                <Heading size="md">{site.name}</Heading>
+                <Text fontSize="sm">{site.id}</Text>
               </Stack>
-            </_Link>
-          </Link>
-          <Divider />
-        </>
+            </Stack>
+          </Box>
+        </Link>
       );
     });
   };
@@ -57,7 +61,7 @@ const Page: FC<IProps> = ({ sites }) => {
   };
 
   return (
-    <>
+    <Box maxW="4xl" mx="auto" w="full" py={12} px={4}>
       <Stack spacing={12}>
         <Flex justifyContent="space-between" alignItems="center">
           <Heading size="2xl">All Sites</Heading>
@@ -72,7 +76,7 @@ const Page: FC<IProps> = ({ sites }) => {
         </Grid>
       </Stack>
       {createSiteModalNode()}
-    </>
+    </Box>
   );
 };
 

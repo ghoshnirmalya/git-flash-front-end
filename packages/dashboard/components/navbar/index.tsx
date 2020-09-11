@@ -18,11 +18,6 @@ const Navbar: NextComponentType = () => {
       label: "Sites",
       href: "/sites",
     },
-    {
-      id: "myAccount",
-      label: "My Account",
-      href: "/my-account",
-    },
   ];
 
   const signInButtonNode = () => {
@@ -58,45 +53,43 @@ const Navbar: NextComponentType = () => {
   };
 
   return (
-    <Box p={4} borderBottomWidth={1} pos="sticky" top={0} bg="white" zIndex={1}>
-      <Box maxW="4xl" mx="auto" w="full">
-        <Stack
-          isInline
-          spacing={4}
-          align="center"
-          justifyContent="space-between"
-          w="full"
-        >
-          <Box>
-            <Stack isInline spacing={4} align="center" fontWeight="semibold">
-              {linksForAllUsers.map((link) => {
-                return (
-                  <Box key={link.id}>
-                    <Link href={link.href}>
-                      <_Link>{link.label}</_Link>
-                    </Link>
-                  </Box>
-                );
-              })}
-              {linksForAuthenticatedUsers.map((link) => {
-                return (
-                  <Box key={link.id}>
-                    <Link href={link.href}>
-                      <_Link>{link.label}</_Link>
-                    </Link>
-                  </Box>
-                );
-              })}
-            </Stack>
-          </Box>
-          <Box>
-            <Stack isInline spacing={4} align="center">
-              {signInButtonNode()}
-              {signOutButtonNode()}
-            </Stack>
-          </Box>
-        </Stack>
-      </Box>
+    <Box p={4} bg="white" borderBottomWidth={1} pos="sticky" top={0} zIndex={1}>
+      <Stack
+        isInline
+        spacing={4}
+        align="center"
+        justifyContent="space-between"
+        w="full"
+      >
+        <Box>
+          <Stack isInline spacing={4} align="center" fontWeight="semibold">
+            {linksForAllUsers.map((link) => {
+              return (
+                <Box key={link.id}>
+                  <Link href={link.href}>
+                    <_Link>{link.label}</_Link>
+                  </Link>
+                </Box>
+              );
+            })}
+            {linksForAuthenticatedUsers.map((link) => {
+              return (
+                <Box key={link.id}>
+                  <Link href={link.href}>
+                    <_Link>{link.label}</_Link>
+                  </Link>
+                </Box>
+              );
+            })}
+          </Stack>
+        </Box>
+        <Box>
+          <Stack isInline spacing={4} align="center">
+            {signInButtonNode()}
+            {signOutButtonNode()}
+          </Stack>
+        </Box>
+      </Stack>
     </Box>
   );
 };
