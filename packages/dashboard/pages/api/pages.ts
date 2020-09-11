@@ -3,18 +3,19 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const { name } = req.body;
+    const { url, siteId } = req.body;
 
-    const site = await prisma.site.create({
-      data: { name },
+    const site = await prisma.page.create({
+      data: {
+        url,
+        site: {
+          connect: {
+            id: siteId,
+          },
+        },
+      },
     });
 
     res.status(200).json(site);
-  }
-
-  if (req.method === "GET") {
-    const sites = await prisma.site.findMany();
-
-    res.status(200).json(sites);
   }
 };

@@ -18,6 +18,9 @@ export async function getServerSideProps(ctx: NextPageContext) {
     where: {
       id: siteId,
     },
+    include: {
+      pages: true,
+    },
   });
 
   return {

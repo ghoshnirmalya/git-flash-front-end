@@ -7,7 +7,7 @@ const fetcher = async (url: string, method: string = "GET", body?: any) => {
     body: JSON.stringify(body),
   };
 
-  const response = await fetch(url, params);
+  const response = await fetch(`${process.env.API_URL}/${url}`, params);
 
   return response.json();
 };

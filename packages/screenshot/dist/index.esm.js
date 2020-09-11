@@ -3,12 +3,13 @@ var _require = require("@prisma/client"),
 
 var prisma = new PrismaClient();
 
-var sendDataToDB = function sendDataToDB(image, page, browserType) {
+var sendDataToDB = function sendDataToDB(image, page, browser) {
   try {
-    console.log("========== Sending data to DB for " + browserType + " ==========");
+    console.log("========== Sending data to DB for " + browser + " ==========");
     return Promise.resolve(prisma.screenshot.create({
       data: {
         image: image,
+        browser: browser,
         page: {
           connect: {
             id: page.id
@@ -16,7 +17,7 @@ var sendDataToDB = function sendDataToDB(image, page, browserType) {
         }
       }
     })).then(function (screenshot) {
-      console.log("========== /Sending data to DB for " + browserType + " ==========");
+      console.log("========== /Sending data to DB for " + browser + " ==========");
       return {
         screenshot: screenshot
       };

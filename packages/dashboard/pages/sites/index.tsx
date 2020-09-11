@@ -1,7 +1,9 @@
 import Page from "components/pages/sites/base";
+import fetcher from "lib/fetcher";
 import prisma from "lib/prisma-client";
 import { NextPage } from "next";
 import React from "react";
+import useSWR from "swr";
 import ISite from "types/site";
 
 interface IProps {
@@ -13,7 +15,7 @@ const SitesIndexPage: NextPage<IProps> = ({ sites }) => {
 };
 
 export async function getServerSideProps() {
-  const sites = await prisma.site.findMany();
+  const sites = await fetcher("api/sites");
 
   return {
     props: {
