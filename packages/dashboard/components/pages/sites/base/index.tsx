@@ -4,15 +4,15 @@ import {
   Flex,
   Grid,
   Heading,
-  Link as _Link,
+  Icon,
   Stack,
   Text,
   useDisclosure,
-  Divider,
 } from "@chakra-ui/core";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React, { FC } from "react";
+import { IoIosArrowForward } from "react-icons/io";
 import ISite from "types/site";
 
 interface IProps {
@@ -40,12 +40,13 @@ const Page: FC<IProps> = ({ sites }) => {
             rounded="md"
             borderWidth={1}
           >
-            <Stack spacing={8} isInline>
+            <Flex justifyContent="space-between" alignItems="center">
               <Stack spacing={2}>
                 <Heading size="md">{site.name}</Heading>
                 <Text fontSize="sm">{site.id}</Text>
               </Stack>
-            </Stack>
+              <Icon as={IoIosArrowForward} />
+            </Flex>
           </Box>
         </Link>
       );
@@ -72,7 +73,7 @@ const Page: FC<IProps> = ({ sites }) => {
           </Box>
         </Flex>
         <Grid templateColumns="repeat(1, 1fr)" gap={4}>
-          <Stack spacing={8}>{sitesNode()}</Stack>
+          <Stack spacing={4}>{sitesNode()}</Stack>
         </Grid>
       </Stack>
       {createSiteModalNode()}
