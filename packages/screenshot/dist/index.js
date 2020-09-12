@@ -11,7 +11,10 @@ const fetcher = function (url, method = "GET", body) {
       },
       body: JSON.stringify(body)
     };
-    const apiEndpoint = process.env.NODE_ENV === "production" ? "https://git-flash-dashboard.vercel.app/" : `${process.env.API_URL}/${url}`;
+    const apiEndpoint = process.env.NODE_ENV !== "development" ? `https://git-flash-dashboard.vercel.app/${url}` : `${process.env.API_URL}/${url}`;
+    console.log("========== URL ==========");
+    console.log(apiEndpoint);
+    console.log("========== /URL ==========");
     return Promise.resolve(fetch(apiEndpoint, params)).then(function (response) {
       return response.json();
     });
