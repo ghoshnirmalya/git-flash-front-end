@@ -16,7 +16,7 @@ const PageHeading: FC<IProps> = ({ site, onOpen }) => {
       </Stack>
       <Box>
         <Button onClick={onOpen} colorScheme="blue">
-          Add new site
+          Add new page
         </Button>
       </Box>
     </Flex>

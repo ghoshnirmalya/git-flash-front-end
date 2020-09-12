@@ -1,26 +1,20 @@
-import launchPlaywright from "./launch-playwright";
+require("dotenv").config();
 
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+import fetcher from "lib/fetcher";
+import launchPlaywright from "lib/launch-playwright";
+import ISite from "types/site";
 
 const init = async (siteId: string) => {
   console.log("========== Init ==========");
 
   try {
-    const site = await prisma.site.findOne({
-      where: {
-        id: siteId,
-      },
-      include: {
-        pages: true,
-      },
-    });
+    const site: ISite = await fetcher(`api/site/${siteId}`);
 
     console.log("========== Site details ==========");
     console.log(site);
     console.log("========== /Site details ==========");
 
-    await site.pages.map(async (page: { id: string; url: string }) => {
+    site.pages?.map(async (page: { id: string; url: string }) => {
       await launchPlaywright("webkit", [], page);
       await launchPlaywright("firefox", [], page);
       await launchPlaywright("chromium", [], page);
@@ -34,4 +28,4 @@ const init = async (siteId: string) => {
   }
 };
 
-init("a37d5b4d-befb-410a-b421-bfaa5d176ba4");
+init("009f38b4-202a-4db4-a225-75f3b0eb7e13");

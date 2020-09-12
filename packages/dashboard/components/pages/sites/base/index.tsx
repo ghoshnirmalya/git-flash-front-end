@@ -19,9 +19,9 @@ interface IProps {
   sites: ISite[];
 }
 
-const CreateSiteModal = dynamic(
+const AddSiteModal = dynamic(
   import(
-    /* webpackChunkName: "CreateSiteModal" */ "components/pages/sites/base/create-site-modal"
+    /* webpackChunkName: "AddSiteModal" */ "components/pages/sites/base/add-site-modal"
   )
 );
 
@@ -53,12 +53,12 @@ const Page: FC<IProps> = ({ sites }) => {
     });
   };
 
-  const createSiteModalNode = () => {
+  const AddSiteModalNode = () => {
     if (!isOpen) {
       return false;
     }
 
-    return <CreateSiteModal isOpen={isOpen} onClose={onClose} />;
+    return <AddSiteModal isOpen={isOpen} onClose={onClose} />;
   };
 
   return (
@@ -76,7 +76,7 @@ const Page: FC<IProps> = ({ sites }) => {
           <Stack spacing={4}>{sitesNode()}</Stack>
         </Grid>
       </Stack>
-      {createSiteModalNode()}
+      {AddSiteModalNode()}
     </Box>
   );
 };

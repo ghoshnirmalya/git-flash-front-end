@@ -31,8 +31,8 @@ const AddPageModal: FC<IProps> = ({ onClose, isOpen, site }) => {
   const handleSubmit = async () => {
     try {
       const response = await mutate(
-        "/api/pages",
-        await fetcher("/api/pages", "POST", { url: pageUrl, siteId: site.id })
+        "api/pages",
+        await fetcher("api/pages", "POST", { url: pageUrl, siteId: site.id })
       );
 
       setPageUrl("");
@@ -40,7 +40,7 @@ const AddPageModal: FC<IProps> = ({ onClose, isOpen, site }) => {
 
       toast({
         position: "bottom-left",
-        title: `${response.name} has been created.`,
+        title: `${response.url} has been created.`,
         status: "success",
         duration: 5000,
         isClosable: true,

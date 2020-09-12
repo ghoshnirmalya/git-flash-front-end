@@ -22,15 +22,15 @@ interface IProps {
   isOpen: boolean;
 }
 
-const CreateSiteModal: FC<IProps> = ({ onClose, isOpen }) => {
+const AddSiteModal: FC<IProps> = ({ onClose, isOpen }) => {
   const [siteName, setSiteName] = useState("");
   const toast = useToast();
 
   const handleSubmit = async () => {
     try {
       const response = await mutate(
-        "/api/sites",
-        await fetcher("/api/sites", "POST", { name: siteName })
+        "api/sites",
+        await fetcher("api/sites", "POST", { name: siteName })
       );
 
       setSiteName("");
@@ -85,4 +85,4 @@ const CreateSiteModal: FC<IProps> = ({ onClose, isOpen }) => {
   );
 };
 
-export default CreateSiteModal;
+export default AddSiteModal;

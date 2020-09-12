@@ -15,6 +15,7 @@
     "prisma:generate": "prisma generate",
     "prisma:save": "prisma migrate save --experimental",
     "prisma:up": "prisma migrate up --experimental",
+    "prisma:format": "prisma format",
     "postinstall": "yarn prisma:generate"
   },
   "dependencies": {

@@ -13,7 +13,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (req.method === "GET") {
-    const sites = await prisma.site.findMany();
+    const { id } = req.body;
+
+    const sites = await prisma.site.findOne({
+      where: {
+        id,
+      },
+      include: {
+        pages: true,
+      },
+    });
 
     res.status(200).json(sites);
   }

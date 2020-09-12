@@ -1,4 +1,4 @@
-import sendDataToDB from "./send-data-to-db";
+import sendDataToDB from "lib/send-data-to-db";
 
 const playwright = require("playwright");
 

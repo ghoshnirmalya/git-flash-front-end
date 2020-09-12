@@ -1,8 +1,3 @@
 # Prisma Migrate lockfile v1
 
-20200906163904-add-user
-20200907045853-change-idto-uuidfor-user
-20200907073746-add-site
-20200907074107-add-page
-20200907074238-add-site-relation-to-page
-20200907081753-add-screenshot
+20200912141901-add-base-models

@@ -6,14 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "microbundle watch --no-compress --format cjs,es",
-    "prisma:studio": "prisma studio --experimental",
-    "prisma:introspect": "prisma introspect",
-    "prisma:generate": "prisma generate",
-    "prisma:save": "prisma migrate save --experimental",
-    "prisma:up": "prisma migrate up --experimental"
+    "dev": "microbundle watch --no-compress --target node --format cjs,es",
+    "start": "node dist/index.js"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
     "playwright": "^1.4.0"
   },
   "source": "src/index.ts",
