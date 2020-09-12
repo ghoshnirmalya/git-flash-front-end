@@ -11,15 +11,23 @@ const PullRequestDetails: FC<IProps> = ({ site }) => {
   const heightOfPageHeading = "86px";
   const heightOfMargin = "1rem";
 
+  const pagesNode = () => {
+    return site.pages.map((page) => {
+      return (
+        <Stack spacing={2} p={4} borderBottomWidth={1}>
+          <Heading size="sm">{page.url}</Heading>
+          <Text fontSize="sm">{page.id}</Text>
+        </Stack>
+      );
+    });
+  };
+
   return (
     <Box
       h={`calc(100vh - ${heightOfNavbar} - ${heightOfPageHeading} - ${heightOfMargin})`}
       overflowY="scroll"
     >
-      <Stack spacing={2} p={4} borderBottomWidth={1}>
-        <Heading size="sm">Pull Request 1</Heading>
-        <Text fontSize="sm">Commit SHA</Text>
-      </Stack>
+      {pagesNode()}
     </Box>
   );
 };

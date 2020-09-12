@@ -23,7 +23,7 @@ model Page {
   url        String
   siteId     String
   site       Site         @relation(fields: [siteId], references: [id])
-  Screenshot Screenshot[]
+  Screenshots Screenshot[]
 }
 
 model Screenshot {
