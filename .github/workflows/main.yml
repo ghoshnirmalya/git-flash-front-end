@@ -1,11 +1,8 @@
 name: Generate screenshots using Playwright
 
 on:
-  # schedule:
-  #   - cron: '* * * * *'
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   build:
@@ -15,14 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: microsoft/playwright-github-action@v1
 
-      # - name: Install production dependencies
-      #   run: yarn install --production
-
       - name: Install Lerna
         run: npm i lerna
-
-      # - name: Generate screenshots
-      #   run: yarn screenshots:generate
 
       - name: Install dependencies for Screenshot app
         run: node_modules/lerna/cli.js bootstrap --scope=@git-flash/screenshot
